@@ -12,7 +12,8 @@ import { HousingLocation } from '../housinglocation';
   ],
   template: `
     <section>
-      <form>
+      <!-- add a search filter and a button -->
+      <form>    
         <input type="text" placeholder="Filter by city">
         <button class="primary" type="button">Search</button>
       </form>
