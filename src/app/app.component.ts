@@ -1,26 +1,31 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.component';
-import { HousingLocationComponent } from './housing-location/housing-location.component';
+import { HomeComponent } from './home/home.component';      // add the component HomeComponent to your app's root component
+
+import { RouterLink } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    HomeComponent,
-    HousingLocationComponent,
+    HomeComponent,                  // add the component HomeComponent to your app's root component
+    RouterLink,
+    RouterOutlet,
   ],
   template: `
   <main>
-    <header class="brand-name">
-      <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
-    </header>
+    <a [routerLink]="['/']">
+      <header class="brand-name">
+        <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+      </header>
+    </a>
     <section class="content">
-      <app-home></app-home>
+      <router-outlet></router-outlet>
     </section>
   </main>
-`,
+  `,
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'homes';
+  title = 'homes';    // the component title
 }
